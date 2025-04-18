@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpyh5kodijnby"
-path="res://.godot/imported/Dungeon_Character_2.png-858afcd7556626f647e8473e16438a41.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://assets/Dungeon_Character_2.png"
-dest_files=["res://.godot/imported/Dungeon_Character_2.png-858afcd7556626f647e8473e16438a41.ctex"]
 
 [params]
 
