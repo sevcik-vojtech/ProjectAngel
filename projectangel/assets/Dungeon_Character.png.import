@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1e5dtc423jmb"
-valid=false
+uid="uid://bgfx3asr0kule"
+path="res://.godot/imported/Dungeon_Character.png-dc22a18fd04c119d943031a1319cd9c9.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://assets/Dungeon_Character.png"
+dest_files=["res://.godot/imported/Dungeon_Character.png-dc22a18fd04c119d943031a1319cd9c9.ctex"]
 
 [params]
 
