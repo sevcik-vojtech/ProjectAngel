@@ -1,12 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dr0apdjqwp3tw"]
+[gd_scene load_steps=10 format=3 uid="uid://dr0apdjqwp3tw"]
 
 [ext_resource type="Script" uid="uid://cta8weksv21x5" path="res://scripts/character_body_2d.gd" id="1_2lce7"]
 [ext_resource type="Texture2D" uid="uid://1f4kalckomur" path="res://assets/sprites/player/idle_anim.png" id="2_io3rj"]
 [ext_resource type="Script" uid="uid://bqc8r1vl3tnpd" path="res://scripts/animated_sprite_2d.gd" id="3_0slni"]
+[ext_resource type="PackedScene" uid="uid://deti22odf0lym" path="res://scenes/cast_area.tscn" id="4_kgk0o"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xhfnw"]
-radius = 25.4701
-height = 81.8991
+[sub_resource type="CircleShape2D" id="CircleShape2D_gcbv8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mdl7e"]
 atlas = ExtResource("2_io3rj")
@@ -43,8 +42,9 @@ motion_mode = 1
 script = ExtResource("1_2lce7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1.41342, 1.46522)
-shape = SubResource("CapsuleShape2D_xhfnw")
+position = Vector2(-1, 26)
+scale = Vector2(-2.82088, 2.61219)
+shape = SubResource("CircleShape2D_gcbv8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(6.505, 6.505)
@@ -59,3 +59,5 @@ script = ExtResource("3_0slni")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRadius"]
 shape = SubResource("CircleShape2D_kpjcp")
+
+[node name="CastArea" parent="." instance=ExtResource("4_kgk0o")]
