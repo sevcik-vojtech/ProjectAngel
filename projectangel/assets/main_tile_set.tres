@@ -1,9 +1,6 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://sskmi0r82y0c"]
-
-[ext_resource type="Texture2D" uid="uid://b0rr807btvm22" path="res://assets/Dungeon_Tileset.png" id="1_gj7vi"]
+[gd_resource type="TileSet" load_steps=2 format=3 uid="uid://sskmi0r82y0c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fg4eh"]
-texture = ExtResource("1_gj7vi")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
