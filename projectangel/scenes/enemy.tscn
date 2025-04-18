@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://1cm5j5dplp03"]
+[gd_scene load_steps=8 format=3 uid="uid://1cm5j5dplp03"]
 
 [ext_resource type="Texture2D" uid="uid://dxqyhvjpmu7yd" path="res://assets/enemy_test_sprite.png" id="1_7p1mj"]
+[ext_resource type="Script" uid="uid://br1w0orkkjyri" path="res://scripts/enemy.gd" id="1_md0e3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_md0e3"]
 atlas = ExtResource("1_7p1mj")
@@ -17,14 +18,36 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ra3w"]
+size = Vector2(40, 40)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5uy6h"]
 size = Vector2(26, 28)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_md0e3"]
+size = Vector2(18.9072, 26.4173)
+
 [node name="Enemy" type="RigidBody2D"]
+script = ExtResource("1_md0e3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4ra3w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Hurtbox" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Hurtbox"]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_4ra3w")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 0)
 shape = SubResource("RectangleShape2D_5uy6h")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-2, 0)
+scale = Vector2(1.37514, 1.05991)
+shape = SubResource("RectangleShape2D_md0e3")
+
+[connection signal="area_entered" from="AnimatedSprite2D/Hurtbox" to="." method="_on_hurtbox_area_entered"]
