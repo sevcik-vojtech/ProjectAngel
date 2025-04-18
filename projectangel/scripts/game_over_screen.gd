@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+func _ready() -> void:
+	visible = false
 
 func _on_restart_button_down() -> void:
 	get_tree().reload_current_scene()
