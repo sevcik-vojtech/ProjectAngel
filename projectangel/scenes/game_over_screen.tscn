@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhw6shystm43b"]
+
+[ext_resource type="Script" uid="uid://c6bcscqyu4ltj" path="res://scripts/game_over_screen.gd" id="1_iwahs"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_iwahs"]
+
+[node name="GameOverScreen" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_iwahs")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "GAME OVER"
+
+[node name="RestartButton" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Restart"
+icon = SubResource("ViewportTexture_iwahs")
+
+[node name="QuitButton" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0

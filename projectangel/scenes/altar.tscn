@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgyfhfibdg6af"]
+
+[ext_resource type="Script" uid="uid://cju4b30w5srbk" path="res://scripts/altar.gd" id="1_si8oa"]
+[ext_resource type="Texture2D" uid="uid://u5b3ioags4br" path="res://assets/altar_sprite.png" id="2_dwhmf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
+size = Vector2(48, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ynsc"]
+size = Vector2(48, 48)
+
+[node name="altar" type="StaticBody2D"]
+script = ExtResource("1_si8oa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_0wfyh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 1.00001)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_dwhmf")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_7ynsc")
