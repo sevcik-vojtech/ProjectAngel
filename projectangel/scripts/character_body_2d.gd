@@ -6,7 +6,7 @@ func get_input():
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	velocity = input_dir * speed
 	if Input.is_action_pressed("left_click"):
-		print("left_click")
+		print("smth")
 
 func _physics_process(delta):
 	get_input()
