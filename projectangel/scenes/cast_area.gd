@@ -9,7 +9,6 @@ func _physics_process(delta):
 
 func get_input():
 	if Input.is_action_pressed("left_click"):
-		print("pow")
 		if !cooldown : 
 			shoot()
 
