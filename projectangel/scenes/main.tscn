@@ -1,9 +1,11 @@
 [gd_scene load_steps=5 format=4 uid="uid://032q3dsakppw"]
 
 [ext_resource type="TileSet" uid="uid://sskmi0r82y0c" path="res://assets/main_tile_set.tres" id="1_o5qli"]
+
 [ext_resource type="PackedScene" uid="uid://dr0apdjqwp3tw" path="res://scenes/player_body.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://bhw6shystm43b" path="res://scenes/game_over_screen.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://bgyfhfibdg6af" path="res://scenes/altar.tscn" id="4_jyhfs"]
+
 
 [node name="Node2D" type="Node2D"]
 
@@ -23,3 +25,4 @@ zoom = Vector2(7, 7)
 
 [node name="altar" parent="." instance=ExtResource("4_jyhfs")]
 position = Vector2(1157, 645)
+
