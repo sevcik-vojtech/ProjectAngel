@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://sskmi0r82y0c" path="res://assets/main_tile_set.tres" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://dr0apdjqwp3tw" path="res://scenes/player_body.tscn" id="2_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://cwoxiv0j745ew" path="res://scenes/game_over_screen.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://bhw6shystm43b" path="res://scenes/game_over_screen.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://bgyfhfibdg6af" path="res://scenes/altar.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://d03wlxwwjhp04" path="res://scenes/enemy_spawner.tscn" id="6_tefeu"]
 
@@ -21,7 +21,7 @@ position = Vector2(1157, 568)
 scale = Vector2(0.155, 0.155)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerBody"]
-zoom = Vector2(4, 4)
+
 
 [node name="Altar" parent="." instance=ExtResource("4_jyhfs")]
 position = Vector2(1157, 645)

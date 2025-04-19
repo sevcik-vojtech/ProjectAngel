@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bgyfhfibdg6af"]
 
-[ext_resource type="Script" uid="uid://cju4b30w5srbk" path="res://scripts/altar.gd" id="1_si8oa"]
+[ext_resource type="Script" path="res://scripts/altar.gd" id="1_si8oa"]
 [ext_resource type="Texture2D" uid="uid://u5b3ioags4br" path="res://assets/altar_sprite.png" id="2_dwhmf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]

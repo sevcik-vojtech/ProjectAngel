@@ -8,7 +8,7 @@ func _ready() -> void:
 	$MeeleAttackSprite.speed_scale = timeout/3
 func _on_meele_attack_timeout_timeout() -> void:
 	queue_free()
-	
+
 
 
 
