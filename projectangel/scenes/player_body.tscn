@@ -88,9 +88,12 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_kpjcp"]
 radius = 115.156
 
-[node name="PlayerBody" type="CharacterBody2D"]
+[node name="PlayerBody" type="CharacterBody2D" groups=["player"]]
+collision_layer = 2
+collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_2lce7")
+dash_duration = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 26)
@@ -109,3 +112,10 @@ script = ExtResource("3_0slni")
 shape = SubResource("CircleShape2D_kpjcp")
 
 [node name="CastArea" parent="." instance=ExtResource("4_kgk0o")]
+
+[node name="DashCD" type="Timer" parent="."]
+
+[node name="DashTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="DashCD" to="." method="_on_dash_cd_timeout"]
