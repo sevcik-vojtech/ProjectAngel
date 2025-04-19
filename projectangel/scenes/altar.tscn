@@ -1,9 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bgyfhfibdg6af"]
 
-
 [ext_resource type="Script" uid="uid://cju4b30w5srbk" path="res://scripts/altar.gd" id="1_si8oa"]
 [ext_resource type="Texture2D" uid="uid://bk780glr353vn" path="res://assets/tiles/TX Props_dark.png" id="2_si8oa"]
-
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
 size = Vector2(47, 37)

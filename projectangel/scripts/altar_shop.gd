@@ -3,7 +3,7 @@ var price = 10
 var itemList
 
 var all_items = [
-	{"name": "Projectyle count", "price": price, "on_purchase": func(): get_tree().get_first_node_in_group("player").purchase_projectyle_count()},
+	{"name": "Projectile count", "price": price, "on_purchase": func(): get_tree().get_first_node_in_group("player").purchase_projectyle_count()},
 	{"name": "Burst", "price": price, "on_purchase": func(): get_tree().get_first_node_in_group("player").purchase_burst()},
 	{"name": "Fire speed", "price": price, "on_purchase": func(): get_tree().get_first_node_in_group("player").purchase_fire_speed()},
 	{"name": "Damage", "price": price, "on_purchase": func(): get_tree().get_first_node_in_group("player").purchase_damage()},
@@ -24,16 +24,16 @@ func get_shop_items():
 func populate_shop():
 	itemList = get_shop_items()
 	$Panel/VBoxContainer/ItemSlot/ItemName.text = itemList[0]["name"]
-	$Panel/VBoxContainer/ItemSlot/Button.text = price
+	$Panel/VBoxContainer/ItemSlot/Button.text = str(price) + " souls"
 	
 	$Panel/VBoxContainer/ItemSlot2/ItemName.text = itemList[1]["name"]
-	$Panel/VBoxContainer/ItemSlot/Button.text = price
+	$Panel/VBoxContainer/ItemSlot2/Button.text = str(price) + " souls"
 	
 	$Panel/VBoxContainer/ItemSlot3/ItemName.text = itemList[2]["name"]
-	$Panel/VBoxContainer/ItemSlot/Button.text = price
+	$Panel/VBoxContainer/ItemSlot3/Button.text = str(price) + " souls"
 	
 	$Panel/VBoxContainer/ItemSlot4/ItemName.text = itemList[3]["name"]
-	$Panel/VBoxContainer/ItemSlot/Button.text = price
+	$Panel/VBoxContainer/ItemSlot4/Button.text = str(price) + " souls"
 
 
 func _on_item_slot1_button_down() -> void:
@@ -41,15 +41,15 @@ func _on_item_slot1_button_down() -> void:
 
 
 func _on_item_slot2_button_down() -> void:
-	itemList[0]["on_purchase"].call()
+	itemList[1]["on_purchase"].call()
 
 
 func _on_item_slot3_button_down() -> void:
-	itemList[0]["on_purchase"].call()
+	itemList[2]["on_purchase"].call()
 
 
 func _on_item_slot4_button_down() -> void:
-	itemList[0]["on_purchase"].call()
+	itemList[3]["on_purchase"].call()
 
 
 func _on_next_wave_button_down() -> void:

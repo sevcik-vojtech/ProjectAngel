@@ -11,7 +11,7 @@ var wave_over: bool = true
 
 func _ready():
 	enemies_spawned = 0
-	wave_num = 1
+	wave_num = 0
 	wave_over = true;
 	#spawn_enemy_wave()
 	#spawn_enemy(0, 300)
@@ -45,6 +45,7 @@ func spawn_enemy(type: int, radius: float):
 
 func spawn_enemy_wave():
 	wave_over = false
+	wave_num += 1
 	print("Wave " + str(wave_num) + " started")
 	basic_enemies_to_be_spawned = wave_num * 10
 	fast_enemies_to_be_spawned = wave_num * 1
@@ -70,7 +71,8 @@ func _on_spawn_timer_timeout() -> void:
 				basic_enemies_to_be_spawned -= 1
 	
 	if basic_enemies_to_be_spawned == 0 and fast_enemies_to_be_spawned == 0 and big_enemies_to_be_spawned == 0:
-		wave_num = wave_num + 1
+		#wave_num = wave_num + 1
+		#print("Wave" + str(wave_num))
 		wave_over = true
 	else:
 		$SpawnTimer.start()

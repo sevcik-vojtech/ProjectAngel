@@ -33,4 +33,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	print(body.is_in_group("player"))
 	if $"../EnemySpawner".wave_over and body.is_in_group("player"):
 		print("Player entered and wave over")
+		$"../AltarShop".populate_shop()
 		$"../AltarShop".visible = true
