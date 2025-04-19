@@ -1,9 +1,13 @@
 extends StaticBody2D
 
-var health := 100
+var health := 5
 
-func take_damage(amount: int):
-	health -= amount
+func _ready():
+	add_to_group("altar")
+	print(global_position)
+
+func take_damage():
+	health -= 1
 	print("Altar hit, health remaining:", health)
 	if health <= 0:
 		die()
