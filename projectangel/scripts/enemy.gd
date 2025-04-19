@@ -20,6 +20,7 @@ func die():
 func _ready():
 	var _player = get_tree().get_nodes_in_group("player").front()
 	$EnemyAnimation.play("default")
+	add_to_group("enemy")
 
 func _process(_delta):
 	if $EnemyAnimation.frame == 2:
