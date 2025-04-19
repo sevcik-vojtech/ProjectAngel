@@ -2,16 +2,15 @@ extends Area2D
 
 @export var speed = 750
 @export var damage = 10
-const RANGE = 5000
+@export var range = 500
 var travelled_distance = 0
 @export var knockback_strenght = 0.5
 
 func _physics_process(delta):
 	var direction = Vector2.UP.rotated(rotation)
 	position += direction * speed * delta
-	
 	travelled_distance += speed * delta
-	if travelled_distance > RANGE:
+	if travelled_distance > range:
 		queue_free()
 
 

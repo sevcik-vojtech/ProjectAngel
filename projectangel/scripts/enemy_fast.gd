@@ -23,6 +23,7 @@ func get_knockback(strength: float, direction: Vector2):
 
 func die():
 	print("Enemy defeated")
+	get_tree().get_first_node_in_group("player").cash += 20
 	queue_free()
 
 func _ready():

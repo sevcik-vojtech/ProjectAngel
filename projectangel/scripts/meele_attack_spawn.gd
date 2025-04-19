@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var CD = 0.5
+var damage = 2
 var cooldown = false
 var is_in_range = false
 var enemies_in_range
@@ -23,6 +24,7 @@ func shoot():
 	var new_meele = MEELE.instantiate()
 	new_meele.global_position = %MeeleAttackOrigin.global_position
 	new_meele.global_rotation = %MeeleAttackOrigin.global_rotation
+	new_meele.damage = damage
 	%MeeleAttackOrigin.add_child(new_meele)
 	cooldown = true
 	$MeeleAttackCD.start(0.0)
