@@ -1,6 +1,7 @@
 extends StaticBody2D
 
-var health := 5
+var max_hp = 10
+var health = max_hp
 
 func _ready():
 	add_to_group("altar")
@@ -18,6 +19,12 @@ func die():
 	var game_over = get_tree().get_current_scene().get_node("GameOverScreen")
 	game_over.visible = true
 	queue_free()
+	
+func purchase_max_altar_health():
+	max_hp += 2
+	
+func heal_to_full():
+	health = max_hp
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

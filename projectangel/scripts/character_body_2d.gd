@@ -102,39 +102,39 @@ func nat_heal():
 		if health < MAXHP:
 			heal()
 
-func lvl_up_max_health():
+func purchase_max_health():
 	lvl_max_HP += 1
 	MAXHP += 2
 
-func lvl_up_max_speed():
+func purchase_mvnt_speed():
 	lvl_max_speed
 	speed += 50
 
-func lvl_up_regen():
+func purchase_regen():
 	lvl_regen += 1
 	regenRate /= 1.05
 
-func lvl_up_abilityCD():
+func purchase_ability_cooldown():
 	lvl_abilityCD += 1
 	abilityCDMOD /= 1.05
 	
 
-func lvl_up_ability_size():
+func purchase_ability_size():
 	lvl_abilitySize += 1
 	Ability_size_mod /= 1.05
 
-func lvl_up_damage():
+func purchase_damage():
 	lvl_damage += 1
 	$CastArea.lvl_up_damage()
 	$MeeleAttackRotation.damage += 1
 
-func lvl_up_projectile_count():
+func purchase_projectyle_count():
 	$CastArea.lvl_up_spread()
 	
-func lvl_up_projectile_burst():
+func purchase_burst():
 	$CastArea.lvl_up_repeat()
 	
-func lvl_up_projectile_cooldown():
+func purchase_fire_speed():
 	$CastArea.lvl_up_cooldown()
 
 	
