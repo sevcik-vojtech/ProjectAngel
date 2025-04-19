@@ -17,6 +17,8 @@ config/icon="res://assets/icon.svg"
 
 [autoload]
 
+DamageNumbers="*res://scripts/damage_numbers.gd"
+
 [global_group]
 
 player="player"
