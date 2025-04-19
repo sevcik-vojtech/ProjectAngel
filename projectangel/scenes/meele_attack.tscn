@@ -42,6 +42,8 @@ rotation = 1.5708
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("1_h01xg")
+damage = 1
+knockback_strenght = 0.5
 
 [node name="MeeleAttackSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vjnig")
@@ -54,7 +56,6 @@ scale = Vector2(0.963079, 1.32736)
 shape = SubResource("RectangleShape2D_7sts0")
 
 [node name="MeeleAttackTimeout" type="Timer" parent="."]
-wait_time = 0.2
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="MeeleAttackTimeout" to="." method="_on_meele_attack_timeout_timeout"]
