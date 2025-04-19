@@ -10,6 +10,10 @@ var dash_is_on_cd = false
 const MAXHP = 3
 var health = 3
 
+func _ready() -> void:
+	add_to_group("player")
+
+
 func get_input():
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	if !is_dashing:

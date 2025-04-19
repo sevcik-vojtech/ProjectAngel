@@ -113,7 +113,7 @@ shape = SubResource("CircleShape2D_kpjcp")
 
 [node name="CastArea" parent="." instance=ExtResource("4_kgk0o")]
 
-[node name="DashCD" type="Timer" parent="."]
+[node name="DashCD" type="Timer" parent="." groups=["player"]]
 
 [node name="DashTimer" type="Timer" parent="."]
 wait_time = 2.0
