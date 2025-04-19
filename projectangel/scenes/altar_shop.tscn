@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqsvqqpba7jwo"]
+
+[ext_resource type="Script" uid="uid://b81dag8d5rt1i" path="res://scripts/altar_shop.gd" id="1_m45g1"]
+[ext_resource type="PackedScene" uid="uid://btfc64pboa6fp" path="res://scenes/item_slot.tscn" id="2_cr3an"]
+
+[node name="AltarShop" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_m45g1")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1151.0
+offset_bottom = 650.0
+
+[node name="VBoxContainer" type="GridContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -518.5
+offset_top = -283.0
+offset_right = 518.5
+offset_bottom = 284.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 235
+columns = 4
+
+[node name="ItemSlot" parent="Panel/VBoxContainer" instance=ExtResource("2_cr3an")]
+layout_mode = 2
+
+[node name="ItemSlot2" parent="Panel/VBoxContainer" instance=ExtResource("2_cr3an")]
+layout_mode = 2
+
+[node name="ItemSlot3" parent="Panel/VBoxContainer" instance=ExtResource("2_cr3an")]
+layout_mode = 2
+
+[node name="ItemSlot4" parent="Panel/VBoxContainer" instance=ExtResource("2_cr3an")]
+layout_mode = 2
+
+[node name="NextWaveButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 1022.0
+offset_top = 594.0
+offset_right = 1133.0
+offset_bottom = 632.0
+text = "Next Wave"
+
+[node name="ShopLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "SHOP"
+
+[connection signal="button_down" from="Panel/VBoxContainer/ItemSlot" to="." method="_on_item_slot1_button_down"]
+[connection signal="button_down" from="Panel/VBoxContainer/ItemSlot2" to="." method="_on_item_slot2_button_down"]
+[connection signal="button_down" from="Panel/VBoxContainer/ItemSlot3" to="." method="_on_item_slot3_button_down"]
+[connection signal="button_down" from="Panel/VBoxContainer/ItemSlot4" to="." method="_on_item_slot4_button_down"]
+[connection signal="button_down" from="Panel/NextWaveButton" to="." method="_on_next_wave_button_down"]
