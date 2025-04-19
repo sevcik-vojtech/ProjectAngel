@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3rabrf86rlnw"]
+
+[ext_resource type="Script" uid="uid://bluty1wbpocf0" path="res://scripts/ui.gd" id="1_nt7q6"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_nt7q6")
+
+[node name="WaveNum" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "WaveNum"
+
+[node name="Souls" type="Label" parent="."]
+offset_left = 1050.0
+offset_top = 615.0
+offset_right = 1091.0
+offset_bottom = 638.0
+text = "Souls"

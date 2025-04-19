@@ -22,6 +22,7 @@ position = Vector2(1157, 568)
 scale = Vector2(0.155, 0.155)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerBody"]
+zoom = Vector2(4, 4)
 
 [node name="Altar" parent="." instance=ExtResource("4_jyhfs")]
 position = Vector2(1157, 645)
@@ -31,4 +32,4 @@ position = Vector2(1099, 509)
 scale = Vector2(0.4, 0.4)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("6_tefeu")]
-position = Vector2(1239, 636)
+position = Vector2(1228, 617)
