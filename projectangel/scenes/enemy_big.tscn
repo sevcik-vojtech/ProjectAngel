@@ -1,23 +1,23 @@
-[gd_scene load_steps=12 format=3 uid="uid://1cm5j5dplp03"]
+[gd_scene load_steps=12 format=3 uid="uid://bjol8ehtq1x2o"]
 
-[ext_resource type="Texture2D" uid="uid://dxqyhvjpmu7yd" path="res://assets/enemy_test_sprite.png" id="1_7p1mj"]
-[ext_resource type="Script" uid="uid://br1w0orkkjyri" path="res://scripts/enemy.gd" id="1_md0e3"]
-[ext_resource type="Texture2D" uid="uid://joq7hajwuxf5" path="res://assets/enemy_test_sprite-attack.png" id="2_4ra3w"]
+[ext_resource type="Script" uid="uid://d05vdwu3ui7ce" path="res://scripts/enemy_big.gd" id="1_3pa5g"]
+[ext_resource type="Texture2D" uid="uid://joq7hajwuxf5" path="res://assets/enemy_test_sprite-attack.png" id="2_prswk"]
+[ext_resource type="Texture2D" uid="uid://dxqyhvjpmu7yd" path="res://assets/enemy_test_sprite.png" id="3_aupy3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5uy6h"]
-atlas = ExtResource("2_4ra3w")
+atlas = ExtResource("2_prswk")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c4w8v"]
-atlas = ExtResource("2_4ra3w")
+atlas = ExtResource("2_prswk")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xwavj"]
-atlas = ExtResource("2_4ra3w")
+atlas = ExtResource("2_prswk")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_md0e3"]
-atlas = ExtResource("1_7p1mj")
+atlas = ExtResource("3_aupy3")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4ra3w"]
@@ -46,7 +46,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ra3w"]
-size = Vector2(41.875, 42.5)
+size = Vector2(41.875, 41.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5uy6h"]
 size = Vector2(26, 28)
@@ -54,10 +54,10 @@ size = Vector2(26, 28)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_md0e3"]
 size = Vector2(18.9072, 26.4173)
 
-[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+[node name="EnemyBig" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4
 collision_mask = 3
-script = ExtResource("1_md0e3")
+script = ExtResource("1_3pa5g")
 
 [node name="EnemyAnimation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4ra3w")
@@ -66,7 +66,7 @@ animation = &"attack_animation"
 [node name="Hitbox" type="Area2D" parent="EnemyAnimation"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyAnimation/Hitbox"]
-position = Vector2(-1.0625, 0.75)
+position = Vector2(-1.0625, 0.25)
 shape = SubResource("RectangleShape2D_4ra3w")
 
 [node name="Collision" type="CollisionShape2D" parent="."]

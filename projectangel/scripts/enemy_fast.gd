@@ -2,11 +2,11 @@ extends CharacterBody2D
 
 var player: CharacterBody2D = null
 var can_attack: bool = true
-var health := 20
+var health := 10
 var area_is_in_hitbox: bool = false
 var area_in_hitbox: Area2D = null
-var mvnt_speed = 20
-var knockback_speed = 100
+var mvnt_speed = 25
+var knockback_speed = 150
 var is_knocked_back: bool = false
 
 
@@ -28,7 +28,7 @@ func die():
 func _ready():
 	$EnemyAnimation.play("default")
 	add_to_group("enemy")
-	scale = Vector2(1, 1)
+	scale = Vector2(0.7, 0.7)
 
 func _process(_delta):
 	if !is_knocked_back:

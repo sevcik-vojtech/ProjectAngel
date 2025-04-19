@@ -11,7 +11,10 @@ var wave_num: int
 func _ready():
 	enemies_spawned = 0
 	wave_num = 1
-	spawn_enemy_wave()
+	#spawn_enemy_wave()
+	spawn_enemy(0, 300)
+	spawn_enemy(1, 300)
+	spawn_enemy(2, 300)
 
 func random_position_on_circle(radius: float) -> Vector2:
 	var angle = randf_range(0, TAU) 
@@ -19,11 +22,24 @@ func random_position_on_circle(radius: float) -> Vector2:
 	return Vector2(0.0, 0.0) + offset
 
 func spawn_enemy(type: int, radius: float):
-	var enemy_scene = preload("res://scenes/enemy.tscn")
-	var enemy = enemy_scene.instantiate()
-	enemy.global_position = random_position_on_circle(radius)
-	add_child(enemy)
-	print("Enemy spawned")
+	if type == 0:
+		var enemy_scene = preload("res://scenes/enemy.tscn")
+		var enemy = enemy_scene.instantiate()
+		enemy.global_position = random_position_on_circle(radius)
+		add_child(enemy)
+		print("Enemy spawned")
+	if type == 1:
+		var enemy_scene = preload("res://scenes/enemy_fast.tscn")
+		var enemy = enemy_scene.instantiate()
+		enemy.global_position = random_position_on_circle(radius)
+		add_child(enemy)
+		print("Enemy spawned")
+	if type == 2:
+		var enemy_scene = preload("res://scenes/enemy_big.tscn")
+		var enemy = enemy_scene.instantiate()
+		enemy.global_position = random_position_on_circle(radius)
+		add_child(enemy)
+		print("Enemy spawned")
 
 func spawn_enemy_wave():
 	basic_enemies_to_be_spawned = wave_num * 10
