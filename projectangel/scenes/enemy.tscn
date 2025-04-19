@@ -1,7 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://1cm5j5dplp03"]
+[gd_scene load_steps=12 format=3 uid="uid://1cm5j5dplp03"]
 
 [ext_resource type="Texture2D" uid="uid://dxqyhvjpmu7yd" path="res://assets/enemy_test_sprite.png" id="1_7p1mj"]
 [ext_resource type="Script" uid="uid://br1w0orkkjyri" path="res://scripts/enemy.gd" id="1_md0e3"]
+[ext_resource type="Texture2D" uid="uid://joq7hajwuxf5" path="res://assets/enemy_test_sprite-attack.png" id="2_4ra3w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uy6h"]
+atlas = ExtResource("2_4ra3w")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4w8v"]
+atlas = ExtResource("2_4ra3w")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwavj"]
+atlas = ExtResource("2_4ra3w")
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_md0e3"]
 atlas = ExtResource("1_7p1mj")
@@ -9,6 +22,20 @@ region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4ra3w"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uy6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4w8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwavj")
+}],
+"loop": true,
+"name": &"attack_animation",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_md0e3")
@@ -19,7 +46,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ra3w"]
-size = Vector2(40, 40)
+size = Vector2(15.5, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5uy6h"]
 size = Vector2(26, 28)
@@ -27,27 +54,28 @@ size = Vector2(26, 28)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_md0e3"]
 size = Vector2(18.9072, 26.4173)
 
-[node name="Enemy" type="RigidBody2D"]
+[node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_md0e3")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="EnemyAnimation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4ra3w")
 
-[node name="Hurtbox" type="Area2D" parent="AnimatedSprite2D"]
+[node name="Hitbox" type="Area2D" parent="EnemyAnimation"]
+monitoring = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Hurtbox"]
-position = Vector2(-2, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyAnimation/Hitbox"]
+position = Vector2(23, -2)
 shape = SubResource("RectangleShape2D_4ra3w")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 0)
+position = Vector2(-3, 0)
 shape = SubResource("RectangleShape2D_5uy6h")
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="Hurtbox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(-2, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(-3, 0)
 scale = Vector2(1.37514, 1.05991)
 shape = SubResource("RectangleShape2D_md0e3")
 
-[connection signal="area_entered" from="AnimatedSprite2D/Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="area_entered" from="EnemyAnimation/Hitbox" to="." method="_on_hitbox_area_entered"]

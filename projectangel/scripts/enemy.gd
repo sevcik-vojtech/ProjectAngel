@@ -1,6 +1,6 @@
-extends RigidBody2D
+extends CharacterBody2D
 
-@export var attack_range: float = 100.0
+@export var attack_range: float = 1.0
 @export var attack_cooldown: float = 2.0
 
 var player: Node2D = null
@@ -18,9 +18,14 @@ func die():
 	queue_free()
 
 func _ready():
-	player = get_tree().get_root().find_node("PlayerBody", true, false)
+	var player = get_tree().get_nodes_in_group("player").front()
 
-func _process(delta):
+func _process(_delta):
+	if $EnemyAnimation.frame == 2:
+		$EnemyAnimation/Hitbox.monitoring = true;
+	else:
+		$EnemyAnimation/Hitbox.monitoring = false;
+	
 	if player:
 		var distance_to_player = global_position.distance_to(player.global_position)
 		
@@ -28,16 +33,11 @@ func _process(delta):
 			attack_player()
 
 func attack_player():
-	# like a button press for player
-	# if hurtbox intersepts player hitbox, player.take_damage(1)
-	# $AnimatedSprite2D.play("attack")
-	if can_attack:
-		print("Enemy attacks the player")
-		can_attack = false
-		await get_tree().create_timer(attack_cooldown).timeout
-		can_attack = true
+	$EnemyAnimation.play("attack_animation")
+	can_attack = false
+	await get_tree().create_timer(attack_cooldown).timeout
+	can_attack = true
 
-
-func _on_hurtbox_area_entered(area: Area2D) -> void:
-	if area.is_in_group("hurtbox"):
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("player"):
 		area.take_damage(1)
