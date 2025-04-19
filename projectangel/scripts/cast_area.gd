@@ -20,6 +20,8 @@ func shoot():
 	%ShootingPoint.add_child(new_projectile)
 	cooldown = true
 	$CastCD.start(0.0)
+	$Pivot/direction.frame = 0
+	$Pivot/direction.play("default", 2)
 	
 
 

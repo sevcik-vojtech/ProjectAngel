@@ -9,9 +9,6 @@ func get_input():
 	velocity = input_dir * speed
 	if Input.is_action_just_pressed("debug_take_damage"):
 		take_damage()
-
-	if Input.is_action_pressed("left_click"):
-		print("left_click")
 	if input_dir.length() != 0:
 		$AnimatedSprite2D.play("run");
 	else:
