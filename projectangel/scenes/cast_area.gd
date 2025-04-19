@@ -8,8 +8,8 @@ func _physics_process(delta):
 	
 
 func get_input():
-	if Input.is_action_pressed("left_click"):
-		if !cooldown : 
+	if !cooldown:
+		if Input.is_action_pressed("left_click"): 
 			shoot()
 
 func shoot():
@@ -19,8 +19,7 @@ func shoot():
 	new_projectile.global_rotation = %ShootingPoint.global_rotation
 	%ShootingPoint.add_child(new_projectile)
 	cooldown = true
-	
-	
+	$CastCD.start(0.0)
 	
 
 
