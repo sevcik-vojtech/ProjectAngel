@@ -28,3 +28,5 @@ position = Vector2(1157, 645)
 
 [node name="Enemy" parent="." instance=ExtResource("5_tbgi4")]
 position = Vector2(1099, 509)
+attack_range = null
+attack_cooldown = null

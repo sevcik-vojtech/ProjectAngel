@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var attack_range: float = 1.0
 @export var attack_cooldown: float = 2.0
 
-var player: Node2D = null
+var player: CharacterBody2D = null
 var can_attack: bool = true
 var health := 100
 
@@ -18,7 +18,8 @@ func die():
 	queue_free()
 
 func _ready():
-	var player = get_tree().get_nodes_in_group("player").front()
+	var _player = get_tree().get_nodes_in_group("player").front()
+	$EnemyAnimation.play("default")
 
 func _process(_delta):
 	if $EnemyAnimation.frame == 2:
