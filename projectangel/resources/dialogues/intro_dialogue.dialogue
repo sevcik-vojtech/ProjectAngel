@@ -1,0 +1,17 @@
+~ start
+?: ... and did you know God sent a bear to murder children?! And they say Lucifer is the bad guy. [wait=1] [next=auto]
+Bob: Yea sure, whatever. [wait=1] [next=auto]
+?: It's crazy stuff. [wait=1] [next=auto]
+=> END
+
+~ arrival
+?: Aaanyway, we've arrived!
+Bob: Arrived? Arrived where? It's just some old ruin. You said we were going to get high!
+?: No, I said you were gonna ascend.
+Bob: Ascend, get high... Tomatoes, tomatoes.
+?: [shake rate=10 level=1] *sigh* [/shake]
+?: Yeah, sure.. could you step into that ring for me?
+Bob: Then we will get high?
+?: You know what? Yes. Yes, we can get high after that. Bob.
+Bob: Okay! Going! [wait=1] [next=auto]
+=> END
