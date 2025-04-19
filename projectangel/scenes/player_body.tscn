@@ -102,7 +102,6 @@ scale = Vector2(6.505, 6.505)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_cw2d6")
 animation = &"walk"
-frame_progress = 0.617571
 script = ExtResource("3_0slni")
 
 [node name="InteractRadius" type="Area2D" parent="."]
