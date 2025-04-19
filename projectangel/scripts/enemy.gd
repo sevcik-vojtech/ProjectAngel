@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var player: CharacterBody2D = null
 var can_attack: bool = true
-var health := 100
+var health := 20
 var area_is_in_hitbox: bool = false
 var area_in_hitbox: Area2D = null
 var mvnt_speed = 25
@@ -33,7 +33,7 @@ func _process(_delta):
 			
 		if (area_in_hitbox.get_parent().is_in_group("player") or area_in_hitbox.get_parent().is_in_group("altar")) and can_attack and $EnemyAnimation.frame == 2:
 			area_in_hitbox.get_parent().take_damage()
-			print("Attaking")
+			print("Enemy Attaking")
 			can_attack = false
 			$AttackCooldown.start()
 
