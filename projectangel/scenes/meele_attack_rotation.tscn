@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnwb333gb083u"]
+
+[ext_resource type="Script" uid="uid://13xhv8qysx6p" path="res://scripts/meele_attack_spawn.gd" id="1_il33y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c7w6i"]
+radius = 70.4557
+
+[node name="MeeleAttackSpawn" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_il33y")
+
+[node name="MeeleAttackRotation" type="Marker2D" parent="."]
+rotation = 1.5708
+
+[node name="MeeleAttackOrigin" type="Marker2D" parent="MeeleAttackRotation"]
+unique_name_in_owner = true
+position = Vector2(0, -60.155)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_c7w6i")
+
+[node name="MeeleAttackCD" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="MeeleAttackCD" to="." method="_on_meele_attack_cd_timeout"]

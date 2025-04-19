@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://bso1hk6frv6w3"]
+
+[ext_resource type="Script" uid="uid://ci603t7dva5f2" path="res://scripts/meele_attack.gd" id="1_h01xg"]
+[ext_resource type="Texture2D" uid="uid://bgynsw5c2tc1l" path="res://temp_assets/Sprite-0002.png" id="2_gh4xn"]
+[ext_resource type="Script" uid="uid://bwo0nyvw6q7bt" path="res://scripts/animated_sprite_2d.gd" id="3_gh4xn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ldbq"]
+atlas = ExtResource("2_gh4xn")
+region = Rect2(0, 0, 26, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ls33y"]
+atlas = ExtResource("2_gh4xn")
+region = Rect2(26, 0, 26, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blu2k"]
+atlas = ExtResource("2_gh4xn")
+region = Rect2(52, 0, 26, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vjnig"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ldbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ls33y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blu2k")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7sts0"]
+size = Vector2(24.9719, 10)
+
+[node name="MeeleAttack" type="Area2D"]
+top_level = true
+rotation = 1.5708
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_h01xg")
+
+[node name="MeeleAttackSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vjnig")
+frame = 2
+frame_progress = 1.0
+script = ExtResource("3_gh4xn")
+
+[node name="MeeleAttackCollisionShape" type="CollisionShape2D" parent="."]
+scale = Vector2(0.963079, 1.32736)
+shape = SubResource("RectangleShape2D_7sts0")
+
+[node name="MeeleAttackTimeout" type="Timer" parent="."]
+wait_time = 0.2
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="MeeleAttackTimeout" to="." method="_on_meele_attack_timeout_timeout"]
