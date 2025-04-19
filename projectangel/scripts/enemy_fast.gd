@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var damage_numbers_origin = $Marker2D
 var player: CharacterBody2D = null
 var can_attack: bool = true
 var health := 10
@@ -12,6 +13,7 @@ var is_knocked_back: bool = false
 
 func take_damage(amount: int):
 	health -= amount
+	DamageNumbers.display_numbers(amount, damage_numbers_origin.global_position, "#B22", 16)
 	print("Enemy hit, health remaining:", health)
 	if health <= 0:
 		die()

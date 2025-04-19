@@ -123,5 +123,8 @@ wait_time = 2.0
 
 [node name="NatHealCD" type="Timer" parent="."]
 
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(13, -59)
+
 [connection signal="timeout" from="DashCD" to="." method="_on_dash_cd_timeout"]
 [connection signal="timeout" from="Special_1_CD" to="." method="_on_special_1_cd_timeout"]

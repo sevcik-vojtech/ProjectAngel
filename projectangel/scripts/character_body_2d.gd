@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var damage_numbers_origin = $Marker2D
 @export var speed = 50
 @export var dash_speed = 500
 var can_take_damage = true
@@ -54,6 +55,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func take_damage():
+	DamageNumbers.display_numbers(-1, damage_numbers_origin.global_position, Color(1, 1, 1, 1), 21)
 	health -= 1
 	if health == 0: 
 		game_over()
@@ -61,7 +63,7 @@ func take_damage():
 func heal():
 	if health != MAXHP:
 		health += 1
-		print("health healed")
+		DamageNumbers.display_numbers(1, damage_numbers_origin.global_position, Color(0, 1, 0, 1), 21)
 	
 func dash(input_dir):   
 	dash_is_on_cd = true
