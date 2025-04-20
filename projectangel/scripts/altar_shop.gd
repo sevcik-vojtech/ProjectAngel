@@ -69,5 +69,6 @@ func _on_item_slot4_button_down() -> void:
 
 
 func _on_next_wave_button_down() -> void:
+	$"../Altar".enemiesSlain = false
 	$"../EnemySpawner".spawn_enemy_wave()
 	visible = false

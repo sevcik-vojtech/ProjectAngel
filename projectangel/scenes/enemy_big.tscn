@@ -67,7 +67,6 @@ sprite_frames = SubResource("SpriteFrames_4ra3w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyAnimation/Hitbox"]
 position = Vector2(1.46428, -2)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_4ra3w")
 
 [node name="Collision" type="CollisionShape2D" parent="."]

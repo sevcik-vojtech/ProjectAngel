@@ -3,6 +3,7 @@ extends Node2D
 var enemies_spawned
 var wave_num: int
 var wave_over: bool = true
+var enemies_to_slain: int
 
 @export var basic_enemies_to_be_spawned: int
 @export var fast_enemies_to_be_spawned: int
@@ -18,6 +19,10 @@ func _ready():
 	#spawn_enemy(0, 300)
 	#spawn_enemy(1, 300)
 	#spawn_enemy(2, 300)
+
+func _process(_delta: float) -> void:
+	if enemies_to_slain == 0:
+		$"../Altar".enemiesSlain = true
 
 func random_position_on_circle(radius: float) -> Vector2:
 	var angle = randf_range(0, TAU) 
@@ -45,8 +50,10 @@ func spawn_enemy(type: int, radius: float):
 		print("Enemy spawned")
 
 func spawn_enemy_wave():
+	$"../Altar".enemiesSlain = false
 	wave_over = false
 	wave_num += 1
+	enemies_to_slain = 0
 	$"../UI".update_wave_num(wave_num)
 	print("Wave " + str(wave_num) + " started")
 	basic_enemies_to_be_spawned = wave_num * 10
@@ -56,6 +63,9 @@ func spawn_enemy_wave():
 	else:
 		big_enemies_to_be_spawned = 0
 	
+	enemies_to_slain += basic_enemies_to_be_spawned
+	enemies_to_slain += fast_enemies_to_be_spawned
+	enemies_to_slain += big_enemies_to_be_spawned
 	$SpawnTimer.start()
 
 

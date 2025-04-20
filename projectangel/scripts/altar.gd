@@ -2,6 +2,7 @@ extends StaticBody2D
 
 var max_hp = 10
 var health = max_hp
+var enemiesSlain: bool
 
 func _ready():
 	add_to_group("altar")
@@ -31,9 +32,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	print("Player entered")
 	print($"../EnemySpawner".wave_over)
 	print(body.is_in_group("player"))
-	if $"../EnemySpawner".wave_over and body.is_in_group("player") and get_tree().get_first_node_in_group("spawner").wave_num == 5:
+	if $"../EnemySpawner".wave_over and body.is_in_group("player") and get_tree().get_first_node_in_group("spawner").wave_num == 5 and enemiesSlain and enemiesSlain:
 		$"../ProjectileUpgrade".visible = true
-	if $"../EnemySpawner".wave_over and body.is_in_group("player") and get_tree().get_first_node_in_group("spawner").wave_num != 5:
+	if $"../EnemySpawner".wave_over and body.is_in_group("player") and get_tree().get_first_node_in_group("spawner").wave_num != 5 and enemiesSlain and enemiesSlain:
 		print("Player entered and wave over")
 		$"../AltarShop".populate_shop()
 		$"../AltarShop".visible = true

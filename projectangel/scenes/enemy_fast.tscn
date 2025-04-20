@@ -69,7 +69,6 @@ animation = &"attack_animation"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyAnimation/Hitbox"]
 position = Vector2(-7.15256e-06, 1.19566)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_4ra3w")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
