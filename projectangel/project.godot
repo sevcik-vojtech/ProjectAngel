@@ -11,13 +11,19 @@ config_version=5
 [application]
 
 config/name="ProjectAngel"
-run/main_scene="uid://032q3dsakppw"
+run/main_scene="uid://8qwix252ctwo"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
 [autoload]
 
 DamageNumbers="*res://scripts/damage_numbers.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+DialogueEndChecker="*res://scripts/dialogue_end_checker.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [global_group]
 

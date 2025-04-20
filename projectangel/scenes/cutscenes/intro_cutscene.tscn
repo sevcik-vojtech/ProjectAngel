@@ -1,10 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://8qwix252ctwo"]
+[gd_scene load_steps=28 format=3 uid="uid://8qwix252ctwo"]
 
 [ext_resource type="PackedScene" uid="uid://cwv2p3ff6sog7" path="res://scenes/world_map.tscn" id="1_jfsk7"]
 [ext_resource type="Script" uid="uid://cfufg2qig6ht2" path="res://scenes/cutscenes/play_dialogue.gd" id="1_qiuj5"]
-[ext_resource type="Texture2D" uid="uid://dd543q3qlp1p5" path="res://assets/icon.svg" id="2_8ofjb"]
 [ext_resource type="Texture2D" uid="uid://1f4kalckomur" path="res://assets/sprites/player/idle_anim.png" id="2_lgoyb"]
 [ext_resource type="Texture2D" uid="uid://c4worc0e52vx8" path="res://assets/sprites/player/run_anim.png" id="3_8ofjb"]
+[ext_resource type="Texture2D" uid="uid://bvaolxmo3y0s0" path="res://assets/sprites/bob/Idle_bob_anim.png" id="3_qiuj5"]
+[ext_resource type="Texture2D" uid="uid://csb8j70u0q55i" path="res://assets/sprites/bob/walk_bob_anim.png" id="4_1n81e"]
 [ext_resource type="Texture2D" uid="uid://uwfmbf6abd6i" path="res://assets/sprites/player/walk_anim.png" id="4_l6gfu"]
 [ext_resource type="PackedScene" uid="uid://bgyfhfibdg6af" path="res://scenes/altar.tscn" id="5_lgoyb"]
 
@@ -120,6 +121,23 @@ tracks/4/keys = {
 "method": &"play_dialogue"
 }]
 }
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Bob")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 11.0333),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [&"walk", 1.0, false],
+"method": &"play"
+}, {
+"args": [&"idle", 1.0, false],
+"method": &"play"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_8ofjb"]
 resource_name = "talk_before_altar1"
@@ -182,15 +200,45 @@ _data = {
 &"talk_before_altar1": SubResource("Animation_8ofjb")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_qiuj5"]
+atlas = ExtResource("3_qiuj5")
+region = Rect2(0, 0, 30, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1n81e"]
+atlas = ExtResource("3_qiuj5")
+region = Rect2(31, 0, 30, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hq43"]
+atlas = ExtResource("4_1n81e")
+region = Rect2(0, 0, 28, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fx1av"]
+atlas = ExtResource("4_1n81e")
+region = Rect2(29, 0, 28, 49)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_l6gfu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_8ofjb")
+"texture": SubResource("AtlasTexture_qiuj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n81e")
 }],
 "loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hq43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fx1av")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 1.75
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mdl7e"]
@@ -276,7 +324,7 @@ script = ExtResource("1_qiuj5")
 libraries = {
 &"": SubResource("AnimationLibrary_1n81e")
 }
-autoplay = "talk_before_altar1"
+autoplay = "intro_walk_to_altar"
 
 [node name="WorldMap" parent="." instance=ExtResource("1_jfsk7")]
 
@@ -286,6 +334,7 @@ visible = false
 [node name="Bob" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -373)
 sprite_frames = SubResource("SpriteFrames_l6gfu")
+animation = &"idle"
 
 [node name="Player" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -310)

@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d3rabrf86rlnw" path="res://scenes/ui.tscn" id="9_85g3d"]
 [ext_resource type="AudioStream" uid="uid://ohasndjsryi5" path="res://assets/SFX/Simulacra-chosic.com_.mp3" id="9_choun"]
 [ext_resource type="Script" path="res://scripts/background_music.gd" id="10_ya4ey"]
-[ext_resource type="PackedScene" uid="uid://b707ml8ae0tnq" path="res://scenes/pause_screen.tscn" id="11_ya4ey"]
+[ext_resource type="PackedScene" path="res://scenes/pause_screen.tscn" id="11_ya4ey"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -22,9 +22,10 @@ position = Vector2(1154, 561)
 [node name="PlayerBody" parent="." instance=ExtResource("2_0wfyh")]
 z_index = 1
 position = Vector2(1157, 568)
-scale = Vector2(0.3, 0.3)
+speed = 150
 
 [node name="Camera2D" type="Camera2D" parent="PlayerBody"]
+zoom = Vector2(2, 2)
 
 [node name="EnemySpawner" parent="." groups=["spawner"] instance=ExtResource("6_tefeu")]
 position = Vector2(1228, 617)

@@ -5,13 +5,14 @@ Bob: Yea sure, whatever. [wait=1] [next=auto]
 => END
 
 ~ arrival
-?: Aaanyway, we've arrived!
-Bob: Arrived? Arrived where? It's just some old ruin. You said we were going to get high!
-?: No, I said you were gonna ascend.
-Bob: Ascend, get high... Tomatoes, tomatoes.
-?: [shake rate=10 level=1] *sigh* [/shake]
-?: Yeah, sure.. could you step into that ring for me?
-Bob: Then we will get high?
-?: You know what? Yes. Yes, we can get high after that. Bob.
+?: Aaanyway, we've arrived! [wait=1] [next=auto]
+Bob: Arrived? Arrived where? It's just some old ruin. You said we were going to get high! [wait=1] [next=auto]
+?: No, I said you were gonna ascend. [wait=1] [next=auto]
+Bob: Ascend, get high... Tomatoes, tomatoes. [wait=1] [next=auto]
+?: [shake rate=10 level=1] *sigh* [/shake] [wait=1] [next=auto]
+?: Yeah, sure.. could you step into that ring for me? [wait=1] [next=auto]
+Bob: Then we will get high? [wait=1] [next=auto]
+?: You know what? Yes. Yes, we can get high after that. Bob. [wait=1] [next=auto]
 Bob: Okay! Going! [wait=1] [next=auto]
+set DialogueEndChecker.dialogue_finish = true
 => END

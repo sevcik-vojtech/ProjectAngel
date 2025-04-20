@@ -28,6 +28,7 @@ size = Vector2(70.274, 31.8548)
 size = Vector2(25461, 18041)
 
 [node name="altar" type="StaticBody2D"]
+scale = Vector2(2, 2)
 script = ExtResource("1_si8oa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
