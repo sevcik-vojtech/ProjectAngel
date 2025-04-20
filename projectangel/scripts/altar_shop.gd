@@ -1,5 +1,5 @@
 extends CanvasLayer
-var price = 10
+var price = 50
 var itemList
 
 var all_items = [
@@ -10,7 +10,7 @@ var all_items = [
 	{"name": "Regeneration", "price": price, "on_purchase": func(): get_tree().get_first_node_in_group("player").purchase_regen()},
 	{"name": "Movement speed", "price": price, "on_purchase": func(): get_tree().get_first_node_in_group("player").purchase_mvnt_speed()},
 	{"name": "Max Health", "price": price, "on_purchase": func(): get_tree().get_first_node_in_group("player").purchase_max_health()},
-	{"name": "Max Altar Health", "price": price, "on_purchase": func(): get_tree().get_first_node_in_group("player").purchase_max_altar_health()},
+	{"name": "Max Altar Health", "price": price, "on_purchase": func(): get_tree().get_first_node_in_group("altar").purchase_max_altar_health()},
 	{"name": "Ability Size", "price": price, "on_purchase": func(): get_tree().get_first_node_in_group("player").purchase_ability_size()},
 	{"name": "Ability Cooldown", "price": price, "on_purchase": func(): get_tree().get_first_node_in_group("player").purchase_ability_cooldown()}
 ]
@@ -37,18 +37,34 @@ func populate_shop():
 
 
 func _on_item_slot1_button_down() -> void:
-	itemList[0]["on_purchase"].call()
+	if get_tree().get_first_node_in_group("player").cash >= price:
+		get_tree().get_first_node_in_group("player").pay(price)
+		price += 20
+		populate_shop()
+		itemList[0]["on_purchase"].call()
 
 
 func _on_item_slot2_button_down() -> void:
+	if get_tree().get_first_node_in_group("player").cash >= price:
+		get_tree().get_first_node_in_group("player").pay(price)
+		price += 20
+		populate_shop()
 	itemList[1]["on_purchase"].call()
 
 
 func _on_item_slot3_button_down() -> void:
+	if get_tree().get_first_node_in_group("player").cash >= price:
+		get_tree().get_first_node_in_group("player").pay(price)
+		price += 20
+		populate_shop()
 	itemList[2]["on_purchase"].call()
 
 
 func _on_item_slot4_button_down() -> void:
+	if get_tree().get_first_node_in_group("player").cash >= price:
+		get_tree().get_first_node_in_group("player").pay(price)
+		price += 20
+		populate_shop()
 	itemList[3]["on_purchase"].call()
 
 

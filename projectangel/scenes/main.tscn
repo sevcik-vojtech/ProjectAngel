@@ -21,6 +21,7 @@ position = Vector2(1157, 568)
 scale = Vector2(0.155, 0.155)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerBody"]
+zoom = Vector2(5, 5)
 
 [node name="Souls_counter" type="Label" parent="PlayerBody/Camera2D"]
 offset_left = 3258.06
@@ -33,7 +34,7 @@ script = ExtResource("4_o6xl0")
 [node name="EnemySpawner" parent="." instance=ExtResource("6_tefeu")]
 position = Vector2(1228, 617)
 
-[node name="Altar" parent="." instance=ExtResource("4_jyhfs")]
+[node name="Altar" parent="." groups=["altar"] instance=ExtResource("4_jyhfs")]
 position = Vector2(1157, 645)
 
 [node name="AltarShop" parent="." instance=ExtResource("6_o6xl0")]

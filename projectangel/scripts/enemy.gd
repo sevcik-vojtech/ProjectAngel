@@ -42,7 +42,7 @@ func _process(_delta):
 		if (area_in_hitbox.get_parent().is_in_group("player") or area_in_hitbox.get_parent().is_in_group("altar")) and can_attack:
 			$EnemyAnimation.play("attack_animation")
 			
-		if (area_in_hitbox.get_parent().is_in_group("player") or area_in_hitbox.get_parent().is_in_group("altar")) and can_attack and $EnemyAnimation.frame == 2:
+		if (area_in_hitbox.get_parent().is_in_group("player") or area_in_hitbox.get_parent().is_in_group("altar")) and can_attack and $EnemyAnimation.frame == 1:
 			area_in_hitbox.get_parent().take_damage()
 			print("Enemy Attaking")
 			can_attack = false
