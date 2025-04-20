@@ -145,6 +145,15 @@ func purchase_burst():
 func purchase_fire_speed():
 	$CastArea.lvl_up_cooldown()
 
+func pick_default():
+	$CastArea.lvl_up_default()
+	
+func pick_rapid():
+	$CastArea.lvl_up_minigun()
+	
+func pick_blast():
+	$CastArea.lvl_up_canon()
+
 	
 	
 
