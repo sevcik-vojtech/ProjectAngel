@@ -11,16 +11,19 @@ func _ready():
 
 func _on_item_slot_button_down() -> void:
 	get_tree().get_first_node_in_group("player").pick_default()
+	$"../EnemySpawner".spawn_enemy_wave()
 	visible = false
 
 
 func _on_item_slot_2_button_down() -> void:
 	get_tree().get_first_node_in_group("player").pick_rapid()
+	$"../EnemySpawner".spawn_enemy_wave()
 	visible = false
 
 
 func _on_item_slot_3_button_down() -> void:
 	get_tree().get_first_node_in_group("player").pick_blast()
+	$"../EnemySpawner".spawn_enemy_wave()
 	visible = false
 
 
