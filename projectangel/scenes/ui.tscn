@@ -6,13 +6,15 @@
 script = ExtResource("1_nt7q6")
 
 [node name="WaveNum" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 85.0
+offset_bottom = 27.0
 text = "WaveNum"
 
 [node name="Souls" type="Label" parent="."]
-offset_left = 1050.0
-offset_top = 615.0
-offset_right = 1091.0
-offset_bottom = 638.0
+offset_left = 2460.0
+offset_top = 1274.0
+offset_right = 2501.0
+offset_bottom = 1297.0
 text = "Souls"
