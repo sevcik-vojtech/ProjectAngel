@@ -6,7 +6,7 @@ var can_attack: bool = true
 var health := 20
 var area_is_in_hitbox: bool = false
 var area_in_hitbox: Area2D = null
-var mvnt_speed = 20
+var mvnt_speed = 40
 var knockback_speed = 100
 var is_knocked_back: bool = false
 

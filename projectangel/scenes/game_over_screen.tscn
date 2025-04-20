@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://wujrohaklw3o" path="res://scripts/game_over_screen.gd" id="1_iwahs"]
 
 [node name="GameOverScreen" type="CanvasLayer"]
+visible = false
 script = ExtResource("1_iwahs")
 
 [node name="Label" type="Label" parent="."]

@@ -6,7 +6,7 @@ var can_attack: bool = true
 var health := 100
 var area_is_in_hitbox: bool = false
 var area_in_hitbox: Area2D = null
-var mvnt_speed = 10
+var mvnt_speed = 20
 var knockback_speed = 0
 var is_knocked_back: bool = false
 
@@ -31,7 +31,8 @@ func die():
 func _ready():
 	$EnemyAnimation.play("default")
 	add_to_group("enemy")
-	scale = Vector2(2, 2)
+	scale = Vector2(1,1)
+	
 
 func _process(_delta):
 	if !is_knocked_back:
@@ -42,7 +43,7 @@ func _process(_delta):
 		if (area_in_hitbox.get_parent().is_in_group("player") or area_in_hitbox.get_parent().is_in_group("altar")) and can_attack:
 			$EnemyAnimation.play("attack_animation")
 			
-		if (area_in_hitbox.get_parent().is_in_group("player") or area_in_hitbox.get_parent().is_in_group("altar")) and can_attack and $EnemyAnimation.frame == 2:
+		if (area_in_hitbox.get_parent().is_in_group("player") or area_in_hitbox.get_parent().is_in_group("altar")) and can_attack and $EnemyAnimation.frame == 1:
 			area_in_hitbox.get_parent().take_damage()
 			print("Enemy Attaking")
 			can_attack = false
