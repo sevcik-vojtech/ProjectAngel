@@ -47,6 +47,7 @@ func spawn_enemy(type: int, radius: float):
 func spawn_enemy_wave():
 	wave_over = false
 	wave_num += 1
+	$"../UI".update_wave_num(wave_num)
 	print("Wave " + str(wave_num) + " started")
 	basic_enemies_to_be_spawned = wave_num * 10
 	fast_enemies_to_be_spawned = wave_num * 1
@@ -60,15 +61,15 @@ func spawn_enemy_wave():
 
 func _on_spawn_timer_timeout() -> void:
 	if big_enemies_to_be_spawned > 0:
-		spawn_enemy(2, 500)
+		spawn_enemy(2, 700)
 		big_enemies_to_be_spawned -= 1
 	else: 
 		if (basic_enemies_to_be_spawned < (fast_enemies_to_be_spawned * 10)) and fast_enemies_to_be_spawned > 0:
-			spawn_enemy(1, 500)
+			spawn_enemy(1, 700)
 			fast_enemies_to_be_spawned -= 1
 		else: 
 			if basic_enemies_to_be_spawned > 0:
-				spawn_enemy(0, 500)
+				spawn_enemy(0, 700)
 				basic_enemies_to_be_spawned -= 1
 	
 	if basic_enemies_to_be_spawned == 0 and fast_enemies_to_be_spawned == 0 and big_enemies_to_be_spawned == 0:

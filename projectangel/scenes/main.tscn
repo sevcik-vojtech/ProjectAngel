@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://dr0apdjqwp3tw" path="res://scenes/player_body.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://cwoxiv0j745ew" path="res://scenes/game_over_screen.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://bgyfhfibdg6af" path="res://scenes/altar.tscn" id="4_jyhfs"]
-[ext_resource type="Script" uid="uid://scfgimhn7g35" path="res://scenes/souls_counter.gd" id="4_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://bqsvqqpba7jwo" path="res://scenes/altar_shop.tscn" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://d03wlxwwjhp04" path="res://scenes/enemy_spawner.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://njfjlarwrkbd" path="res://scenes/projectile_upgrade.tscn" id="8_tipki"]
+[ext_resource type="PackedScene" uid="uid://d3rabrf86rlnw" path="res://scenes/ui.tscn" id="9_85g3d"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -23,14 +23,6 @@ scale = Vector2(0.3, 0.3)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerBody"]
 
-[node name="Souls_counter" type="Label" parent="PlayerBody/Camera2D"]
-offset_left = 3258.06
-offset_top = -2045.16
-offset_right = 3298.06
-offset_bottom = -2022.16
-scale = Vector2(10.3532, 4.64612)
-script = ExtResource("4_o6xl0")
-
 [node name="EnemySpawner" parent="." groups=["spawner"] instance=ExtResource("6_tefeu")]
 position = Vector2(1228, 617)
 
@@ -40,3 +32,5 @@ position = Vector2(1157, 645)
 [node name="AltarShop" parent="." instance=ExtResource("6_o6xl0")]
 
 [node name="ProjectileUpgrade" parent="." instance=ExtResource("8_tipki")]
+
+[node name="UI" parent="." instance=ExtResource("9_85g3d")]
