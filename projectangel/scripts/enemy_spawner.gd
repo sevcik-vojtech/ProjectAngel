@@ -13,6 +13,7 @@ func _ready():
 	enemies_spawned = 0
 	wave_num = 0
 	wave_over = true;
+	add_to_group("spawner")
 	#spawn_enemy_wave()
 	#spawn_enemy(0, 300)
 	#spawn_enemy(1, 300)
