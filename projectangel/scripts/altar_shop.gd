@@ -49,7 +49,7 @@ func _on_item_slot2_button_down() -> void:
 		get_tree().get_first_node_in_group("player").pay(price)
 		price += 20
 		populate_shop()
-	itemList[1]["on_purchase"].call()
+		itemList[1]["on_purchase"].call()
 
 
 func _on_item_slot3_button_down() -> void:
@@ -57,7 +57,7 @@ func _on_item_slot3_button_down() -> void:
 		get_tree().get_first_node_in_group("player").pay(price)
 		price += 20
 		populate_shop()
-	itemList[2]["on_purchase"].call()
+		itemList[2]["on_purchase"].call()
 
 
 func _on_item_slot4_button_down() -> void:
@@ -65,7 +65,7 @@ func _on_item_slot4_button_down() -> void:
 		get_tree().get_first_node_in_group("player").pay(price)
 		price += 20
 		populate_shop()
-	itemList[3]["on_purchase"].call()
+		itemList[3]["on_purchase"].call()
 
 
 func _on_next_wave_button_down() -> void:

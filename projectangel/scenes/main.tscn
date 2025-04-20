@@ -18,10 +18,9 @@ position = Vector2(1154, 561)
 [node name="PlayerBody" parent="." instance=ExtResource("2_0wfyh")]
 z_index = 1
 position = Vector2(1157, 568)
-scale = Vector2(0.155, 0.155)
+scale = Vector2(0.3, 0.3)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerBody"]
-zoom = Vector2(5, 5)
 
 [node name="Souls_counter" type="Label" parent="PlayerBody/Camera2D"]
 offset_left = 3258.06
