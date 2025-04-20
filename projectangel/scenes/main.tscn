@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://032q3dsakppw"]
+[gd_scene load_steps=11 format=3 uid="uid://032q3dsakppw"]
 
 [ext_resource type="PackedScene" uid="uid://cwv2p3ff6sog7" path="res://scenes/world_map.tscn" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://dr0apdjqwp3tw" path="res://scenes/player_body.tscn" id="2_0wfyh"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://d03wlxwwjhp04" path="res://scenes/enemy_spawner.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://njfjlarwrkbd" path="res://scenes/projectile_upgrade.tscn" id="8_tipki"]
 [ext_resource type="PackedScene" uid="uid://d3rabrf86rlnw" path="res://scenes/ui.tscn" id="9_85g3d"]
+[ext_resource type="AudioStream" uid="uid://ohasndjsryi5" path="res://assets/SFX/Simulacra-chosic.com_.mp3" id="9_choun"]
+[ext_resource type="Script" uid="uid://d218kuyeudo5e" path="res://scenes/background_music.gd" id="10_ya4ey"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -34,3 +36,9 @@ position = Vector2(1157, 645)
 [node name="ProjectileUpgrade" parent="." instance=ExtResource("8_tipki")]
 
 [node name="UI" parent="." instance=ExtResource("9_85g3d")]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_choun")
+script = ExtResource("10_ya4ey")
+
+[connection signal="finished" from="BackgroundMusic" to="BackgroundMusic" method="_on_finished"]
