@@ -30,16 +30,18 @@ func get_input():
 			print("pow")
 			for j in LVL_repeat + 1:
 				shoot()
-				$RepeatCD.wait_time = 0.3 
-				$RepeatCD.start(0.0)
-				await $RepeatCD.timeout
+				if LVL_repeat > 0:
+					$ShootSFX.pitch_scale = 1 + 0.1 * LVL_repeat
+					$RepeatCD.wait_time = CD / (cdMod * cdMinigunMod * LVL_repeat + 1 * 2)
+					$RepeatCD.start(0.0)
+					await $RepeatCD.timeout
 			$CastCD.wait_time = CD * cdMod * cdMinigunMod
 			$CastCD.start(0.0)
 			$Pivot/direction.frame = 0
-			$Pivot/direction.play("default", 2)
 
 
 func shoot():
+	$ShootSFX.play(0.7)
 	cooldown = true
 	const PROJECTILE = preload("res://scenes/projectile_1.tscn")
 	var new_projectile = PROJECTILE.instantiate()
@@ -100,3 +102,4 @@ func lvl_up_default ():
 
 func _on_timer_timeout() -> void:
 	cooldown = false
+	$Pivot/direction.frame = 6
