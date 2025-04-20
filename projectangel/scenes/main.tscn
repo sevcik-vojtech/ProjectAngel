@@ -9,12 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://njfjlarwrkbd" path="res://scenes/projectile_upgrade.tscn" id="8_tipki"]
 [ext_resource type="PackedScene" uid="uid://d3rabrf86rlnw" path="res://scenes/ui.tscn" id="9_85g3d"]
 [ext_resource type="AudioStream" uid="uid://ohasndjsryi5" path="res://assets/SFX/Simulacra-chosic.com_.mp3" id="9_choun"]
-
 [ext_resource type="Script" uid="uid://d218kuyeudo5e" path="res://scripts/background_music.gd" id="10_ya4ey"]
-
-
-
-[ext_resource type="Script" path="res://scenes/background_music.gd" id="10_ya4ey"]
+[ext_resource type="Script" uid="uid://d218kuyeudo5e" path="res://scripts/background_music.gd" id="10_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://b707ml8ae0tnq" path="res://scenes/pause_screen.tscn" id="11_ya4ey"]
 
 
