@@ -25,18 +25,6 @@ func _physics_process(delta):
 	
 
 func get_input():
-	if Input.is_action_just_pressed("Debug_4"):
-		lvl_up_canon()
-		print("lvl up canon")
-	if Input.is_action_just_pressed("Debug_3"):
-		lvl_up_minigun()
-		print("lvl up minigun")
-	if Input.is_action_just_pressed("Debug_2"):
-		lvl_up_spread()
-		print("lvl up spread")
-	if Input.is_action_just_pressed("Debug_5"):
-		lvl_up_repeat()
-		print("lvl up repeat")
 	if !cooldown:
 		if Input.is_action_pressed("left_click"): 
 			print("pow")

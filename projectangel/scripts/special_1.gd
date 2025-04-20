@@ -24,4 +24,5 @@ func _on_special_1_duration_timeout() -> void:
 func _on_tick_timeout() -> void:
 	for i in enemies_inside.size():
 		enemies_inside[i].take_damage(damage)
+	get_tree().get_first_node_in_group("player").heal()
 	$Special_1Tick.start(0.0)

@@ -110,6 +110,14 @@ func purchase_mvnt_speed():
 	lvl_max_speed
 	speed += 50
 
+func increment_cash(amount: int):
+	cash += amount
+	$Camera2D/Souls_counter.update_score_label(cash)
+	
+func pay(amount: int):
+	cash -= amount
+	$Camera2D/Souls_counter.update_score_label(cash)
+	
 func purchase_regen():
 	lvl_regen += 1
 	regenRate /= 1.05
