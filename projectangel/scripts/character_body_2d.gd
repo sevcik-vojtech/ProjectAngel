@@ -21,6 +21,7 @@ var lvl_abilityCD = 0
 var lvl_abilitySize = 0
 var abilityCDMOD = 1
 var Ability_size_mod = 1
+var display_timeout = true
 
 
 func _ready() -> void:
@@ -49,10 +50,19 @@ func get_input():
 	if Input.is_action_just_pressed("strong ability"):
 		if !special_1_is_on_cd:
 			spec_aby_1()
+	if Input.is_action_just_pressed("Debug_2"):
+		take_damage()
 		
+func _process(_delta: float) -> void:
+	if health < 4 && display_timeout:
+		DamageNumbers.display_numbers(health, damage_numbers_origin.global_position, Color(0, 0, 0, 1), 10)
+		display_timeout = false
+		$Display_timeout.start()
+
 func _physics_process(delta):
 	get_input()
 	move_and_slide()
+
 	
 func take_damage():
 	DamageNumbers.display_numbers(-1, damage_numbers_origin.global_position, Color(1, 1, 1, 1), 21)
@@ -164,3 +174,7 @@ func _on_dash_cd_timeout() -> void:
 func _on_special_1_cd_timeout() -> void:
 	special_1_is_on_cd = false
 	
+
+
+func _on_display_timeout_timeout() -> void:
+	display_timeout = true

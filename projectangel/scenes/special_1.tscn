@@ -34,5 +34,7 @@ sprite_frames = SubResource("SpriteFrames_miod4")
 
 [node name="Special_1Tick" type="Timer" parent="."]
 
+[node name="Display_timeout" type="Timer" parent="."]
+
 [connection signal="timeout" from="Special_1_Duration" to="." method="_on_special_1_duration_timeout"]
 [connection signal="timeout" from="Special_1Tick" to="." method="_on_tick_timeout"]
