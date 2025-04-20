@@ -83,7 +83,7 @@ func spec_aby_1():
 	var new_ability = ABILITY.instantiate()
 	new_ability.damage = 1 + lvl_damage 
 	new_ability.global_position = global_position
-	new_ability.scale = Vector2(Ability_size_mod, Ability_size_mod)
+	new_ability.scale = Vector2(Ability_size_mod * 0.1, Ability_size_mod * 0.1)
 	get_parent().add_child(new_ability)
 	special_1_is_on_cd = true
 	$Special_1_CD.wait_time = Special1CD * abilityCDMOD
@@ -112,11 +112,11 @@ func purchase_mvnt_speed():
 
 func increment_cash(amount: int):
 	cash += amount
-	$Camera2D/Souls_counter.update_score_label(cash)
+	$"../UI".update_score_label(cash)
 	
 func pay(amount: int):
 	cash -= amount
-	$Camera2D/Souls_counter.update_score_label(cash)
+	$"../UI".update_score_label(cash)
 	
 func purchase_regen():
 	lvl_regen += 1

@@ -1,55 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://drukt8axge3hj"]
+[gd_scene load_steps=5 format=3 uid="uid://drukt8axge3hj"]
 
 [ext_resource type="Script" uid="uid://73reeqvjbvgm" path="res://scripts/special_1.gd" id="1_woooy"]
-[ext_resource type="Texture2D" uid="uid://c4nfil5m8drmg" path="res://assets/sprites/cursor.png" id="2_m7qwl"]
+[ext_resource type="Texture2D" uid="uid://b8fb84e84l413" path="res://assets/Sprite_ability.png" id="2_woooy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_62lw2"]
 radius = 559.752
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_msp1x"]
-atlas = ExtResource("2_m7qwl")
-region = Rect2(0, 0, 33, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p2bpg"]
-atlas = ExtResource("2_m7qwl")
-region = Rect2(33, 0, 33, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4oixy"]
-atlas = ExtResource("2_m7qwl")
-region = Rect2(66, 0, 33, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ex2ay"]
-atlas = ExtResource("2_m7qwl")
-region = Rect2(99, 0, 33, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2qx46"]
-atlas = ExtResource("2_m7qwl")
-region = Rect2(132, 0, 33, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v2pd1"]
-atlas = ExtResource("2_m7qwl")
-region = Rect2(165, 0, 33, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_miod4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_msp1x")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p2bpg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4oixy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ex2ay")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2qx46")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v2pd1")
+"texture": ExtResource("2_woooy")
 }],
 "loop": true,
 "name": &"default",
@@ -58,7 +19,6 @@ animations = [{
 
 [node name="Special_1" type="Area2D"]
 top_level = true
-scale = Vector2(0.065, 0.065)
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("1_woooy")
